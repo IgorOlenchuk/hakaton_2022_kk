@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Группа товаров {{ group.title }}{% endblock %}
+{% block header %}{{ group.title }}{% endblock %}
+{% block content %}
+
+    {% for product in products %}
+    <h3>
+        Группа: {{ product.groups }}, Описание: {{ product.description }}, {% include 'includes/thumbnail.html' %}
+    </a>
+    </h3>
+    <p>{{ product.name }}</p>
+    {% if not forloop.last %}<hr>{% endif %}
+    {% endfor %}
+
+{% endblock %}

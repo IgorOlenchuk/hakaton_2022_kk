@@ -1,0 +1,14 @@
+<div class="card mb-3 mt-1 shadow-sm">
+
+    <!-- Отображение картинки -->
+    {% load thumbnail %}
+    {% thumbnail group.image "320x320" crop="center" upscale=True as im %}
+    <img class="card-img" src="{{ im.url }}" />
+    {% endthumbnail %}
+    <!-- Отображение текста поста -->
+    <div class="card-body">
+        <p class="card-text">
+            {{ group.title|linebreaksbr }}
+        </p>
+    </div>
+</div>
