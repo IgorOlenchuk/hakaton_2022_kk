@@ -14,7 +14,7 @@ from django.views.decorators.http import (require_GET, require_http_methods,
 from users.models import Subscription
 
 from .forms import ProductForm
-from .models import Favorite, Group, Products, Purchase, User
+from .models import Favorite, Groups, Products, Purchase, User
 
 
 def _extend_context(context, user):
@@ -25,14 +25,11 @@ def _extend_context(context, user):
 
 @require_GET
 def index(request):
-    groups = request.GET.getlist('group')
-    product_list = Products.products.group_filter(groups)
-    paginator = Paginator(product_list, 6)
+    group_list = Groups.objects.all()
+    paginator = Paginator(group_list, 6)
     page_number = request.GET.get('page')
     page = paginator.get_page(page_number)
     context = {
-        'all_groups': Group.objects.all(),
-        'group': groups,
         'page': page,
         'paginator': paginator
     }
@@ -43,19 +40,20 @@ def index(request):
     return render(request, 'index.html', context)
 
 
-def group_products(request, slug):
-    group = get_object_or_404(Group, slug=slug)
-    products = group.group_products.all()
-    paginator = Paginator(products, 12)
+def group_products(request, group_id):
+    group = get_object_or_404(Groups, id=group_id)
+    products_list = group.group_products.all()
+    paginator = Paginator(products_list, 12)
     page_number = request.GET.get('page')
     page = paginator.get_page(page_number)
     context ={
         'page': page,
         'paginator': paginator,
         'group': group,
-        'products': products,
+        'all_products': products_list,
     }
     return render(request, 'group.html', context)
+
 
 @require_GET
 def profile(request, user_id):
@@ -80,7 +78,7 @@ def profile(request, user_id):
 
 @require_GET
 def group_detail(request, group_id):
-    group = get_object_or_404(Group, id=group_id)
+    group = get_object_or_404(Groups, id=group_id)
     context = {
         'group': group,
     }
@@ -110,9 +108,9 @@ class FavoriteView(View):
         return super().dispatch(*args, **kwargs)
 
     def get_queryset(self):
-        groups = self.request.GET.getlist('group')
+        group = self.request.GET.getlist('group')
         user = self.request.user
-        queryset = self.model.favorite.get_group_filtered(user, groups)
+        queryset = self.model.favorite.get_group_filtered(user, group)
         return queryset
 
     def get(self, request):
@@ -121,7 +119,7 @@ class FavoriteView(View):
         page = paginator.get_page(page_number)
         purchase_list = Purchase.purchase.get_purchases_list(request.user)
         context = {
-            'all_groups': Group.objects.all(),
+            'all_groups': Groups.objects.all(),
             'purchase_list': purchase_list,
             'active': 'favorite',
             'paginator': paginator,
@@ -131,21 +129,21 @@ class FavoriteView(View):
 
     def post(self, request):
         json_data = json.loads(request.body.decode())
-        recipe_id = json_data['id']
-        recipe = get_object_or_404(Products, id=product_id)
+        product_id = json_data['id']
+        product = get_object_or_404(Products, id=product_id)
         data = {'success': 'true'}
         favorite = Favorite.favorite.get_user(request.user)
         is_favorite = favorite.products.filter(id=product_id).exists()
         if is_favorite:
             data['success'] = 'false'
         else:
-            favorite.recipes.add(product)
+            favorite.products.add(product)
         return JsonResponse(data)
 
 
 @login_required(login_url='auth/login/')
 @require_http_methods('DELETE')
-def delete_favorite(request,product_id):
+def delete_favorite(request, product_id):
     product = get_object_or_404(Products, id=product_id)
     data = {'success': 'true'}
     try:

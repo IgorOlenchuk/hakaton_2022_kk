@@ -5,7 +5,7 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('group/<slug:slug>', views.group_products, name='group'),
+    path('group/<int:group_id>', views.group_products, name='group'),
     path('profile/<int:user_id>', views.profile, name='profile'),
     path('favorites', views.FavoriteView.as_view(), name='favorite'),
     path('favorites/<int:product_id>', views.delete_favorite,

@@ -1,12 +1,12 @@
 from django.contrib import admin
-from .models import Products, Group, Favorite
+from .models import Products, Groups, Favorite
 
 
 class ProductsAdmin(admin.ModelAdmin):
 
-    list_display = ('pk', 'name', 'description', 'pub_date', 'price', 'groups', 'in_favorite_count')
+    list_display = ('pk', 'name', 'description', 'pub_date', 'price', 'group', 'in_favorite_count')
     search_fields = ('groups', 'name',)
-    list_filter = ('groups', 'price', 'pub_date',)
+    list_filter = ('group', 'price', 'pub_date',)
     empty_value_display = '-пусто-'
 
     def in_favorite_count(self, obj):
@@ -15,7 +15,7 @@ class ProductsAdmin(admin.ModelAdmin):
     in_favorite_count.short_description = 'В избранном'
 
 
-class GroupAdmin(admin.ModelAdmin):
+class GroupsAdmin(admin.ModelAdmin):
 
     list_display = ('pk', 'title')
     search_fields = ('title',)
@@ -33,5 +33,5 @@ class FavoriteAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Products, ProductsAdmin)
-admin.site.register(Group, GroupAdmin)
+admin.site.register(Groups, GroupsAdmin)
 admin.site.register(Favorite, FavoriteAdmin)

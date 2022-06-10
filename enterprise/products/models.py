@@ -6,23 +6,22 @@ from django.core.exceptions import ObjectDoesNotExist
 User = get_user_model()
 
 
-class Group(models.Model):
+class Groups(models.Model):
     title = models.CharField(max_length=255, verbose_name='Название группы товаров')
-    image = models.ImageField(upload_to='products/group/',
+    image = models.ImageField(upload_to='group/',
                               verbose_name='Изображение группы товаров')
-    slug = models.SlugField(unique=True, verbose_name='Слаг группы')
 
     def __str__(self):
         return f'{self.title}'
 
 
 class ProductManager(models.Manager):
-    def group_filter(self, groups):
-        if groups:
+    def group_filter(self, group):
+        if group:
             return super().get_queryset().prefetch_related(
                 'groups'
             ).filter(
-                groups__slug__in=groups
+                groups__slug__in=group
             ).distinct()
         else:
             return super().get_queryset().prefetch_related(
@@ -33,9 +32,9 @@ class ProductManager(models.Manager):
 class Products(models.Model):
     name = models.CharField(max_length=255, verbose_name='Название товара')
     description = models.TextField(verbose_name='Описание товара')
-    image = models.ImageField(upload_to='products/',
+    image = models.ImageField(upload_to='group/products/',
                               verbose_name='Изображение твоара')
-    groups = models.ForeignKey(Group,
+    group = models.ForeignKey(Groups,
                               on_delete=models.SET_NULL,
                               related_name='group_products',
                               blank=True, null=True)
@@ -88,18 +87,18 @@ class FavoriteManager(models.Manager):
         except ObjectDoesNotExist:
             return []
 
-    def get_group_filtered(self, user, tags):
+    def get_group_filtered(self, user, group):
         try:
             products = super().get_queryset().get(user=user).products.all()
-            if groups:
+            if group:
                 return products.prefetch_related(
                     'groups'
                 ).filter(
-                    groups__slug__in=groups
+                    groups__slug__in=group
                 ).distinct()
             else:
                 return products.prefetch_related(
-                    'groups'
+                    'group'
                 ).all()
         except ObjectDoesNotExist:
             return []

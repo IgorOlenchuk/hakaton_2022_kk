@@ -22,8 +22,8 @@
         <p> если у вас есть какие-либо вопросы о продукции для приготовления корма, то наши квалифицированные менеджеры ответят на них, помогут с выбором.</p>
         <p> Обращайтесь к нам, если вас интересует действительно качественное оборудование для производства комбикорма. Мы гарантируем, что вы останетесь довольны нашей продукцией!</p>
     <div class="card-list">
-        {% for group in page %}
-            {% include 'group_card.html' with group=group %}
+        {% for card in page %}
+            {% include 'group_card.html' with card=card %}
         {% endfor %}
     </div>
     <!-- {% include 'paginator.html' with page=page paginator=paginator %} -->

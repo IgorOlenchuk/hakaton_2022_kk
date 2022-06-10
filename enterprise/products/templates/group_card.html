@@ -1,14 +1,21 @@
-<div class="card mb-3 mt-1 shadow-sm">
-
+{% load thumbnail %}
+<div class="card" data-id="{{ card.id }}">
     <!-- Отображение картинки -->
-    {% load thumbnail %}
-    {% thumbnail group.image "320x320" crop="center" upscale=True as im %}
-    <img class="card-img" src="{{ im.url }}" />
-    {% endthumbnail %}
-    <!-- Отображение текста поста -->
-    <div class="card-body">
-        <p class="card-text">
-            {{ group.title|linebreaksbr }}
-        </p>
+    <a href="{% url 'group' group_id=card.id %}" class="link">
+        {% thumbnail card.image "320x320" crop="center" upscale=True as im %}
+        <img class="card-img" src="{{ im.url }}" />
+        {% endthumbnail %}
+    </a>
+    <!-- Отображение названия группы товаров -->
+    <div class="card__body">
+        <a class="card__title link" href="{% url 'group' group_id=card.id %}">{{ card.title }}</a>
+            <ul class="card__items">
+                {% for group in card.group.all %}
+                    <li class="card__item"><span class="badge badge_style_{{ group }}">{{ group.title }}</span></li>
+                {% endfor %}
+            </ul>
+        <div class="card__items card__items_column">
+            <p class="card__text"><span class="icon-time"></span> {{ card.price }}</p>
+        </div>
     </div>
 </div>
