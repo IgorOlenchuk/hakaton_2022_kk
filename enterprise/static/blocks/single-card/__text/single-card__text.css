@@ -1,0 +1,16 @@
+.single-card__text {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+/**
+ * Адаптивный размер шрифта (минимальный 8 px, максимальный 14)
+ */
+    font-size: calc( (100vw - 480px)/(1280 - 480) * (14 - 8) + 8px);
+    line-height: 17px;
+    color: #000000;
+    margin: 0 0 15px;
+    padding: 0;
+}
+.single-card__text:last-child {
+    margin-bottom: 0;
+}

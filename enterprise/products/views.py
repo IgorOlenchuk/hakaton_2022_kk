@@ -26,7 +26,7 @@ def _extend_context(context, user):
 @require_GET
 def index(request):
     group_list = Groups.objects.all()
-    paginator = Paginator(group_list, 6)
+    paginator = Paginator(group_list, 8)
     page_number = request.GET.get('page')
     page = paginator.get_page(page_number)
     context = {
@@ -60,7 +60,7 @@ def profile(request, user_id):
     profile = get_object_or_404(User, id=user_id)
     groups = request.GET.getlist('group')
     products_list = Products.products.group_filter(groups)
-    paginator = Paginator(products_list.filter(author=profile), 6)
+    paginator = Paginator(products_list.filter(author=profile), 8)
     page_number = request.GET.get('page')
     page = paginator.get_page(page_number)
     context = {

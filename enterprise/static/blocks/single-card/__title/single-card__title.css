@@ -1,0 +1,12 @@
+.single-card__title {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+/**
+ * Адаптивный размер шрифта (минимальный 12 px, максимальный 40)
+ */
+    font-size: calc( (100vw - 480px)/(1280 - 480) * (40 - 12) + 12px);
+    line-height: 49px;
+    color: #000000;
+    margin: 0;
+}

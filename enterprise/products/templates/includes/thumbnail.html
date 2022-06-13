@@ -1,5 +1,6 @@
-<div class="card mb-3 mt-1 shadow-sm">
-        {% load thumbnail %}
-        {% thumbnail product.image "320x320" crop="center" upscale=True as im %}
-            <img class="card-img" src="{{ im.url }}">
-        {% endthumbnail %}
+{% load thumbnail %}
+<div class="card" data-id="{{ card.id }}">
+    {% thumbnail product.image "320x320" crop="center" upscale=True as im %}
+        <img src="{{ im.url }}" alt="{{ card.name }}" width="{{ im.width }}" height="{{ im.height}}" class="card__image">
+    {% endthumbnail %}
+</div>

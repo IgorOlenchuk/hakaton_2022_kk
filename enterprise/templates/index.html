@@ -3,13 +3,12 @@
 
 {% block styles %}
     {% load static %}
-    <!-- <link rel="stylesheet" href="{% static 'pages/index.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'pages/index.css' %}">
 {% endblock %}
 
 {% block content %}
     <div class="main__header">
         <h1 class="main__title">Оборудование для производства комбикорма</h1>
-        <!-- {% include 'groups.html' %} -->
     </div>
     <h2>Наши преимущества </h2>
         <p> Мы предлагаем свои услуги самым разным фермерским предприятиям, частным лицам, свинокомплексам, птицефабрикам и другим крупным хозяйствам. Компания «АгроПоставка» занимается поставкой специализированных комплексов для изготовления кормосмесей производительностью до 10 тонн в час (включают горизонтальные и вертикальные смесители), электронных и механических устройств для фасовки, созданием бункеров для хранения, мини-грануляторов, автоматизированных линий по производству комбикорма в зависимости от особенностей заказа клиента. К нам обращаются по таким причинам: </p>
@@ -26,16 +25,16 @@
             {% include 'group_card.html' with card=card %}
         {% endfor %}
     </div>
-    <!-- {% include 'paginator.html' with page=page paginator=paginator %} -->
+    {% include 'paginator.html' with page=page paginator=paginator %}
 {% endblock %}
 
 {% block javascript %}
     {% load static %}
-        <!-- <script src="{% static 'js/components/MainCards.js' %}"></script>
+        <script src="{% static 'js/components/MainCards.js' %}"></script>
         <script src="{% static 'js/components/Purchpurachases.js' %}"></script>
         <script src="{% static 'js/components/Favorites.js' %}"></script>
         <script src="{% static 'js/components/CardList.js' %}"></script>
         <script src="{% static 'js/components/Header.js' %}"></script>
         <script src="{% static 'js/api/Api.js' %}"></script>
-        <script src="{% static 'js/indexAuth.js' %}"></script> -->
+        <script src="{% static 'js/indexAuth.js' %}"></script>
 {% endblock %}

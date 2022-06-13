@@ -1,0 +1,14 @@
+.card__title {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    /**
+ * Адаптивный размер шрифта (минимальный 8 px, максимальный 20)
+ */
+    font-size: calc( (100vw - 480px)/(1280 - 480) * (20 - 8) + 8px);
+    line-height: 20px;
+    color: #000000;
+    margin: 0 0 0px;
+    padding: 0;
+    display: block;
+}

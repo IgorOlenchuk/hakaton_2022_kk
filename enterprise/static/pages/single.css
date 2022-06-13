@@ -5,6 +5,20 @@
 @import "../blocks/container/container.css";
 @import "../blocks/link/link.css";
 
+@import "../blocks/card/card.css";
+@import "../blocks/card/__image/card__image.css";
+@import "../blocks/card/__item/card__item.css";
+@import "../blocks/card/__title/card__title.css";
+@import "../blocks/card/__items/card__items.css";
+@import "../blocks/card/__items/_column/card__items_column.css";
+@import "../blocks/card/__body/card__body.css";
+@import "../blocks/card/__text/card__text.css";
+@import "../blocks/card/__footer/card__foter.css";
+
+@import "../blocks/main/main.css";
+@import "../blocks/main/__header/main__header.css";
+@import "../blocks/main/__title/main__title.css";
+
 @import "../blocks/button/button.css";
 @import "../blocks/button/_style/button_style_blue.css";
 @import "../blocks/button/_style/button_style_light-blue.css";

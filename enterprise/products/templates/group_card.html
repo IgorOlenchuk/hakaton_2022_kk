@@ -3,7 +3,7 @@
     <!-- Отображение картинки -->
     <a href="{% url 'group' group_id=card.id %}" class="link">
         {% thumbnail card.image "320x320" crop="center" upscale=True as im %}
-        <img class="card-img" src="{{ im.url }}" />
+        <img src="{{ im.url }}" alt="{{ card.name }}" width="{{ im.width }}" height="{{ im.height}}" class="card__image">
         {% endthumbnail %}
     </a>
     <!-- Отображение названия группы товаров -->
@@ -11,11 +11,8 @@
         <a class="card__title link" href="{% url 'group' group_id=card.id %}">{{ card.title }}</a>
             <ul class="card__items">
                 {% for group in card.group.all %}
-                    <li class="card__item"><span class="badge badge_style_{{ group }}">{{ group.title }}</span></li>
+                    <li class="card__item"><span class="badge badge_style_blue">{{ group.title }}</span></li>
                 {% endfor %}
             </ul>
-        <div class="card__items card__items_column">
-            <p class="card__text"><span class="icon-time"></span> {{ card.price }}</p>
-        </div>
     </div>
 </div>

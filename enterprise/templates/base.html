@@ -11,6 +11,14 @@
         {% block styles %}
         {% endblock %}
     </head>
+       <style>
+                body {
+                background: #FFFFFF url(/static/images/pole.jpg); /* Фоновый цвет и фоновый рисунок*/
+                color: #000; /*Цвет текста на странице*/
+                background-attachment: fixed; /* Фон страницы фиксируется */
+                background-repeat: repeat-x; /* Изображение повторяется по горизонтали */
+            }
+	   </style>
     <body class="body">
         {% include 'header.html' %}
         <main class="main container">
@@ -18,7 +26,7 @@
             {% endblock %}
         </main>
         {% include 'footer.html' %}
-        <!--- <script src="{% static 'js/config/config.js' %}"></script> --->
+        <script src="{% static 'js/config/config.js' %}"></script>
         {% block javascript %}
         {% endblock %}
     </body>
