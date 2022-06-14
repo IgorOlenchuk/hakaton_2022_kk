@@ -30,6 +30,8 @@
 
 @import "../blocks/card-list/card-list.css";
 
+@import "../blocks/single-card/__text/single-card__text.css";
+
 @import "../blocks/card/card.css";
 @import "../blocks/card/__image/card__image.css";
 @import "../blocks/card/__item/card__item.css";

@@ -7,8 +7,8 @@
 
             <ul class="nav__items list">
                 <li class="nav__item{% if request.path == '/' %} nav__item_active{% endif %}"><a href="{% url 'index' %}" class="nav__link link">Каталог</a></li>
-                <li class="nav__item{% if active == 'favorite' %} nav__item_active{% endif %}"><a href="{% url 'about-author' %}" class="nav__link link">О компании</a></li>
-                    <li class="nav__item{% if active == 'favorite' %} nav__item_active{% endif %}"><a href="{% url 'about-spec' %}" class="nav__link link">Контакты</a></li>
+                <li class="nav__item{% if active == 'about-author' %} nav__item_active{% endif %}"><a href="{% url 'about-author' %}" class="nav__link link">О компании</a></li>
+                    <li class="nav__item{% if active == 'about-spec' %} nav__item_active{% endif %}"><a href="{% url 'about-spec' %}" class="nav__link link">Контакты</a></li>
                 {% if request.user.is_authenticated %}
                     <li class="nav__item{% if active == 'favorite' %} nav__item_active{% endif %}"><a href="{% url 'favorite' %}" class="nav__link link">Избранное</a></li>
                     <!-- <li class="nav__item{% if active == 'purchase' %} nav__item_active{% endif %}"><a href="{% url 'purchases' %}" class="nav__link link">Список покупок</a> <span class="badge badge_style_blue nav__badge" id="counter">{{ counter }}</span></li> -->
