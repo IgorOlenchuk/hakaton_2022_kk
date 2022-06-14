@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport"
             content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta name="description" content="{% for description in seodata %}{{ description.description }} {% endfor %}">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <!--- <link rel="icon" href="/static/images/fav.ico" type="image"> -->
         <title>{% block title %}Title{% endblock %}</title>
@@ -13,7 +14,7 @@
     </head>
        <style>
                 body {
-                background: #FFFFFF url(/static/images/pole.jpg); /* Фоновый цвет и фоновый рисунок*/
+                background: #FFFFFF;  /* Фоновый цвет и фоновый рисунок url(/static/images/pole.jpg);*/
                 color: #000; /*Цвет текста на странице*/
                 background-attachment: fixed; /* Фон страницы фиксируется */
                 background-repeat: repeat-x; /* Изображение повторяется по горизонтали */

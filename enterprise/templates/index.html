@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
-{% block title %}Оборудование для производста комбикорма купить в Агропроставке{% endblock %}
+{% block title %}
+    {% for title in seodata %}{{ title.title }} {% endfor %}
+{% endblock %}
 
 {% block styles %}
     {% load static %}
@@ -8,21 +10,30 @@
 
 {% block content %}
     <div class="main__header">
-        <h1 class="main__title">Оборудование для производства комбикорма</h1>
+        <h1 class="main__title"> {% for h1 in seodata %}{{ h1.h1 }} {% endfor %} </h1>
     </div>
-    <h2>Наши преимущества </h2>
-        <p> Мы предлагаем свои услуги самым разным фермерским предприятиям, частным лицам, свинокомплексам, птицефабрикам и другим крупным хозяйствам. Компания «АгроПоставка» занимается поставкой специализированных комплексов для изготовления кормосмесей производительностью до 10 тонн в час (включают горизонтальные и вертикальные смесители), электронных и механических устройств для фасовки, созданием бункеров для хранения, мини-грануляторов, автоматизированных линий по производству комбикорма в зависимости от особенностей заказа клиента. К нам обращаются по таким причинам: </p>
-        <p> стоимость оборудования для комбикормовых заводов, выставленного на продажу, является доступной; </p>
-        <p> реализуем товары только высокого качества, отвечающие всем предъявляемым требованиям; </p>
-        <p> произведем доставку точно в срок; </p>
-        <p> ответственно подходим к каждому заказу; </p>
-        <p> занимаемся монтажом собственной и сторонней техники;</p>
-        <p> готовы выполнить заказ любой сложности; </p>
-        <p> если у вас есть какие-либо вопросы о продукции для приготовления корма, то наши квалифицированные менеджеры ответят на них, помогут с выбором.</p>
-        <p> Обращайтесь к нам, если вас интересует действительно качественное оборудование для производства комбикорма. Мы гарантируем, что вы останетесь довольны нашей продукцией!</p>
+
+    <div class="main__text">
+        <h3> {% for mini_description in seodata %}{{ mini_description.mini_description }} {% endfor %} </h3>
+    </div>
+
+    <div class="main__text">
+         {% for text in seodata %}{{ text.text }} {% endfor %}
+    </div>
+        {% load thumbnail %}
+    <div class="single-card">
+        {% for image in seodata %}
+            {% thumbnail image.image '480x480' crop="center" upscale=True as im %}
+            <img src="{{ im.url }}" alt={% for mini_description in seodata %}{{ mini_description.mini_description }} {% endfor %} width="{{ im.width }}" height="{{ im.height }}" class="single-card__image">
+            {% endthumbnail %}
+        {% endfor %}
+    </div>
+    <div class="main__text">
+        <h3 class="main__text">Каталог товаров:</h3>
+    </div>
     <div class="card-list">
         {% for card in page %}
-            {% include 'group_card.html' with card=card %}
+            {% include 'product_card.html' with card=card %}
         {% endfor %}
     </div>
     {% include 'paginator.html' with page=page paginator=paginator %}
@@ -31,8 +42,6 @@
 {% block javascript %}
     {% load static %}
         <script src="{% static 'js/components/MainCards.js' %}"></script>
-        <script src="{% static 'js/components/Purchpurachases.js' %}"></script>
-        <script src="{% static 'js/components/Favorites.js' %}"></script>
         <script src="{% static 'js/components/CardList.js' %}"></script>
         <script src="{% static 'js/components/Header.js' %}"></script>
         <script src="{% static 'js/api/Api.js' %}"></script>
