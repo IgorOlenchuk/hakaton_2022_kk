@@ -6,8 +6,8 @@
  * Адаптивный размер шрифта (минимальный 20 px, максимальный 40)
  */
     font-size: calc( (100vw - 480px)/(1280 - 480) * (40 - 20) + 20px);
-    line-height: 49px;
-    color: #0a4a8b;
+    line-height: normal;
+    color: #0000000;
     padding: 0;
     margin: 0;
 }

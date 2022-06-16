@@ -22,8 +22,12 @@ urlpatterns += [
     path('about/', include("django.contrib.flatpages.urls")),
     path("about/about-author/", views.flatpage,
          {"url": "/about-author/"}, name="about-author"),
-    path("about/about-spec/", views.flatpage,
-         {"url": "/about-spec/"}, name="about-spec"),
+    path("about/contacts/", views.flatpage,
+         {"url": "/contacts/"}, name="contacts"),
+    path("about/payments/", views.flatpage,
+         {"url": "/payments/"}, name="payments"),
+    path("about/delivery/", views.flatpage,
+         {"url": "/delivery/"}, name="delivery"),
 ]
 
 if settings.DEBUG:

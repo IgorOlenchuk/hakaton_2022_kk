@@ -7,5 +7,5 @@
  */
     font-size: calc( (100vw - 480px)/(1280 - 480) * (16 - 8) + 8px);
     line-height: 20px;
-    color: #FFFFFF;
+    color: #DCDCDC;
 }

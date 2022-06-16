@@ -1,13 +1,13 @@
 .nav__item_active {
-    color: #4A61DD;
+    color: #C0C0C0;
 }
 .nav__item_active:after {
     content: '';
     position: absolute;
     top: 50%;
-    margin-top: 20px;
+    margin-top: 10px;
     left: 0;
     width: 100%;
     height: 2px;
-    background: #4A61DD;
+    background: #DCDCDC;
 }

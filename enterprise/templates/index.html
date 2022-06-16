@@ -11,25 +11,18 @@
 {% block content %}
     <div class="main__header">
         <h1 class="main__title"> {% for h1 in seodata %}{{ h1.h1 }} {% endfor %} </h1>
-    </div>
-
-    <div class="main__text">
-        <h3> {% for mini_description in seodata %}{{ mini_description.mini_description }} {% endfor %} </h3>
-    </div>
-
-    <div class="main__text">
+        <br>
+        <a class="main__text">Текст</a>
+        <br>
+        <h2 class="main__text"> {% for mini_description in seodata %}{{ mini_description.mini_description }} {% endfor %} </h2>
+        <br>
+    <a class="main__text">
          {% for text in seodata %}{{ text.text }} {% endfor %}
-    </div>
-        {% load thumbnail %}
-    <div class="single-card">
-        {% for image in seodata %}
-            {% thumbnail image.image '480x480' crop="center" upscale=True as im %}
-            <img src="{{ im.url }}" alt={% for mini_description in seodata %}{{ mini_description.mini_description }} {% endfor %} width="{{ im.width }}" height="{{ im.height }}" class="single-card__image">
-            {% endthumbnail %}
-        {% endfor %}
-    </div>
-    <div class="main__text">
-        <h3 class="main__text">Каталог товаров:</h3>
+    </a>
+        <br>
+    <a>
+        <h2 class="main__text">Каталог товаров:</h2>
+    </a>
     </div>
     <div class="card-list">
         {% for card in page %}
@@ -37,13 +30,4 @@
         {% endfor %}
     </div>
     {% include 'paginator.html' with page=page paginator=paginator %}
-{% endblock %}
-
-{% block javascript %}
-    {% load static %}
-        <script src="{% static 'js/components/MainCards.js' %}"></script>
-        <script src="{% static 'js/components/CardList.js' %}"></script>
-        <script src="{% static 'js/components/Header.js' %}"></script>
-        <script src="{% static 'js/api/Api.js' %}"></script>
-        <script src="{% static 'js/indexAuth.js' %}"></script>
 {% endblock %}

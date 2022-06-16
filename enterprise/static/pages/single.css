@@ -78,6 +78,13 @@
 @import "../blocks/icon-favorite/icon-favorite.css";
 @import "../blocks/icon-favorite/_active/icon-favorite_active.css";
 @import "../blocks/icon-favorite/big/icon-favorite_big.css";
+@import "../blocks/tabs/tabs.css";
+@import "../blocks/product/product.css";
+@import "../blocks/product/__image/_big/product__image_big.css";
+@import "../blocks/product/__image/product__image.css";
+@import "../blocks/product/__text/product__text.css";
+@import "../blocks/product/__title/product__title.css";
+@import "../blocks/product/_reverse/product_reverse.css";
 * {
     box-sizing: border-box;
 }

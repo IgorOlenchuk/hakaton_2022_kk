@@ -3,7 +3,7 @@
     <!-- Отображение картинки -->
     <a href="{% url 'product' product_id=card.id %}" class="link">
         {% thumbnail card.image "320x320" crop="center" upscale=True as im %}
-        <img src="{{ im.url }}" alt="{{ card.description }}" width="{{ im.width }}" height="{{ im.height}}" class="card__image">
+        <img src="{{ im.url }}" alt="{{ card.mini_description }}" width="{{ im.width }}" height="{{ im.height}}" class="card__image">
         {% endthumbnail %}
     </a>
     <!-- Отображение названия товара -->

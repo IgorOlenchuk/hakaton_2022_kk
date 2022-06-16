@@ -1,13 +1,13 @@
-.main__title {
+.main__text {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: normal;
 /**
- * Адаптивный размер шрифта (минимальный 20 px, максимальный 40)
+ * Адаптивный размер шрифта (минимальный 8 px, максимальный 12)
  */
-    font-size: calc( (100vw - 480px)/(1280 - 480) * (16 - 12) + 20px);
+    font-size: calc( (100vw - 480px)/(1280 - 480) * (12 - 8) + 12px);
     line-height: 20px;
-    color: #000000;
+    color: #2F4F4F;
     padding: 0;
     margin: 0;
 }

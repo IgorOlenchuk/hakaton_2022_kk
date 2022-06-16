@@ -4,12 +4,12 @@
 .pagination__item_active:after {
     position: absolute;
     content: '';
-    top: -50%;
+    top: 0%;
     left: 50%;
     transform: translate(-50%);
     z-index: -1;
-    background: #4A61DD;
-    border-radius: 50%;
-    width: 46px;
-    height: 46px;
+    background: #696969;
+    border-radius: 20%;
+    width: 26px;
+    height: 26px;
 }
