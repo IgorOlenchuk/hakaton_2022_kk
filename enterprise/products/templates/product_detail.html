@@ -33,20 +33,22 @@
       <div class="tabs__content">
         <div class="tabs__pane tabs__pane_show">
             <div class="product">
-            <a> {{ product.description|safe }} </a>
-            <a>
-                    {% thumbnail product.image_description_first '1024x768' upscale=True as im %}
-                        <img src="{{ im.url }}" alt="{{ alt_image_description_first }}" width="{{ im.width }}" height="{{ im.height }}" class="product__image_big">
-                    {% endthumbnail %}
-            </a>
-            <a>{{ product.description_first|safe }}</a>
-            <a>
-                    {% thumbnail product.image_description_second '1024x768' upscale=True as im %}
-                        <img src="{{ im.url }}" alt="{{ alt_image_description_second }}" width="{{ im.width }}" height="{{ im.height }}" class="product__image_big">
-                    {% endthumbnail %}
-            </a>
-            <a>{{ product.description_second|safe }}</a>
-                </div>
+                <a>
+                    <a>{{ product.description|safe }}</a>
+                        <a>
+                                {% thumbnail product.image_description_first '1024x768' upscale=True as im %}
+                                    <img src="{{ im.url }}" alt="{{ alt_image_description_first }}" width="{{ im.width }}" height="{{ im.height }}" class="product__image_big">
+                                {% endthumbnail %}
+                        </a>
+                    <a>{{ product.description_first|safe }}</a>
+                        <a>
+                                {% thumbnail product.image_description_second '1024x768' upscale=True as im %}
+                                    <img src="{{ im.url }}" alt="{{ alt_image_description_second }}" width="{{ im.width }}" height="{{ im.height }}" class="product__image_big">
+                                {% endthumbnail %}
+                        </a>
+                    <a>{{ product.description_second|safe }}</a>
+                </a>
+            </div>
         </div>
         <div class="tabs__pane">
             <div class="product">
