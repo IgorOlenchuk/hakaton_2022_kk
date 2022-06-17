@@ -2,7 +2,7 @@
 <div class="card" data-id="{{ card.id }}">
     <!-- Отображение картинки -->
     <a href="{% url 'product' product_id=card.id %}" class="link">
-        {% thumbnail card.image "320x320" crop="center" upscale=True as im %}
+        {% thumbnail card.image "240x240" crop="center" upscale=True as im %}
         <img src="{{ im.url }}" alt="{{ card.mini_description }}" width="{{ im.width }}" height="{{ im.height}}" class="card__image">
         {% endthumbnail %}
     </a>

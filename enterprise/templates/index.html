@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% block description %}
+    {% for description in seodata %}{{ description.description }} {% endfor %}
+{% endblock %}
 {% block title %}
     {% for title in seodata %}{{ title.title }} {% endfor %}
 {% endblock %}
@@ -12,7 +15,7 @@
     <div class="main__header">
         <h1 class="main__title"> {% for h1 in seodata %}{{ h1.h1 }} {% endfor %} </h1>
         <br>
-        <a class="main__text">Текст</a>
+        <a class="main__text">Обеспечиваем технический суверенитет</a>
         <br>
         <h2 class="main__text"> {% for mini_description in seodata %}{{ mini_description.mini_description }} {% endfor %} </h2>
         <br>

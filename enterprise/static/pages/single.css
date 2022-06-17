@@ -53,8 +53,6 @@
 @import "../blocks/single-card/__section/single-card__section.css";
 @import "../blocks/single-card/__section-title/single-card__section-title.css";
 @import "../blocks/single-card/__section-text/single-card__section-text.css";
-@import "../blocks/single-card/__favorite/single-card__favorite.css";
-@import "../blocks/single-card/__favorite-tooltip/single-card__favorite-tooltip.css";
 @import "../blocks/single-card/__section-item/single-card__section-item.css";
 
 @import "../blocks/footer/footer.css";
@@ -75,9 +73,6 @@
 @import "../blocks/icon-time/icon-time.css";
 @import "../blocks/icon-user/icon-user.css";
 @import "../blocks/icon-plus/icon-plus.css";
-@import "../blocks/icon-favorite/icon-favorite.css";
-@import "../blocks/icon-favorite/_active/icon-favorite_active.css";
-@import "../blocks/icon-favorite/big/icon-favorite_big.css";
 @import "../blocks/tabs/tabs.css";
 @import "../blocks/product/product.css";
 @import "../blocks/product/__image/_big/product__image_big.css";

@@ -1,5 +1,5 @@
 .header {
-    background: whitesmoke url(/static/images/bg_setka-header.jpg);
+    background: whitesmoke;
     display: flex;
     align-items: center;
     justify-content: center;

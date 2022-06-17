@@ -1,4 +1,8 @@
 {% extends 'base.html' %}
+{% block description %}
+{{ product.seo_description|safe }}
+{% endblock %}
+
 {% block title %}{{ product.name }}{% endblock %}
 
 {% block styles %}
@@ -11,7 +15,7 @@
 {% load thumbnail user_filters %}
     <div class="single-card" data-id="{{ product.id }}" data-author="{{ product.author.id }}">
         {% thumbnail product.image '480x480' upscale=True as im %}
-        <img src="{{ im.url }}" alt="{{ card.alt_image }}" width="{{ im.width }}" height="{{ im.height }}" class="single-card__image">
+        <img src="{{ im.url }}" alt="{{ product.alt_image }}" width="{{ im.width }}" height="{{ im.height }}" class="single-card__image">
         {% endthumbnail %}
         <div class="single-card__info">
             <div class="single-card__header-info">
@@ -20,7 +24,8 @@
             <div class="single-card__section">
                 <p class="single-card__section-text">{{ product.mini_description|safe }}</p>
                 <br>
-                <p class="single-card__section-text">Цена: уточните у менеджера</p>
+                <a href="https://t.me/Olenchuk" class="single-card__section-text">Цена: уточните у менеджера</a>
+
             </div>
         </div>
     </div>
@@ -37,13 +42,13 @@
                     <a>{{ product.description|safe }}</a>
                         <a>
                                 {% thumbnail product.image_description_first '1024x768' upscale=True as im %}
-                                    <img src="{{ im.url }}" alt="{{ alt_image_description_first }}" width="{{ im.width }}" height="{{ im.height }}" class="product__image_big">
+                                    <img src="{{ im.url }}" alt="{{ product.alt_image_description_first }}" width="{{ im.width }}" height="{{ im.height }}" class="product__image_big">
                                 {% endthumbnail %}
                         </a>
                     <a>{{ product.description_first|safe }}</a>
                         <a>
                                 {% thumbnail product.image_description_second '1024x768' upscale=True as im %}
-                                    <img src="{{ im.url }}" alt="{{ alt_image_description_second }}" width="{{ im.width }}" height="{{ im.height }}" class="product__image_big">
+                                    <img src="{{ im.url }}" alt="{{ product.alt_image_description_second }}" width="{{ im.width }}" height="{{ im.height }}" class="product__image_big">
                                 {% endthumbnail %}
                         </a>
                     <a>{{ product.description_second|safe }}</a>
@@ -55,7 +60,7 @@
                 <a>{{ product.characteristic|safe }}</a>
                 <a>
                         {% thumbnail product.image_characteristic '1024x768' upscale=True as im %}
-                            <img src="{{ im.url }}" alt="{{ alt_image_characteristic }}" width="{{ im.width }}" height="{{ im.height }}" class="product__image_big">
+                            <img src="{{ im.url }}" alt="{{ product.alt_image_characteristic }}" width="{{ im.width }}" height="{{ im.height }}" class="product__image_big">
                         {% endthumbnail %}
                 </a>
             </div>

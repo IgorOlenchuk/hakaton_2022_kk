@@ -13,9 +13,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = '7y16j%db!@nbwg8u&s%nvn#p(&4ymdvedc3y+zekz!7&uqbfrb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'centralpark.gq', 'www.centralpark.gq']
+ALLOWED_HOSTS = ['olenchjg.beget.tech']
 
 
 # Application definition
