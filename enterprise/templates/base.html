@@ -28,8 +28,9 @@
             {% endblock %}
         </main>
         {% include 'footer.html' %}
-        <script src="{% static 'js/config/config.js' %}"></script>
+
         {% block javascript %}
+        <script src="{% static 'js/config/config.js' %}"></script>
         {% endblock %}
     </body>
 </html>

@@ -1,23 +1,28 @@
-<footer class="footer">
-    <div class="footer__container container">
-        <a href="{% url 'index' %}" class="footer__brand link">© 2022 "ЭКОФУД СПБ"</a>
+{% block styles %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'blocks/footer/footer.css' %}">
+{% endblock %}
 
-        <ul class="footer__items">
+
+<footer>
+    <div class="heads">
+        <a href="{% url 'index' %}">© 2022 "ЭКОФУД СПБ"</a>
+        <ul>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            <li class="footer__item">
+            <li>
                 <a href="https://t.me/Olenchuk">
-                    <i class="fa fa-telegram" style="font-size:32px;color:white"></i>
+                    <i class="fa fa-telegram" style="font-size:32px;color:rgb(0, 0, 0)"></i>
                 </a>
             </li>
-                        <li class="footer__item">
+                        <li>
                 <a href="https://vk.com/ashmanx">
-                    <i class="fa fa-vk" style="font-size:32px;color:white"></i>
+                    <i class="fa fa-vk" style="font-size:32px;color:rgb(0, 0, 0)"></i>
                 </a>
             </li>
-            <li class="footer__item"><a href="{% url 'delivery' %}" class="footer__link link">Доставка</a></li>
-            <li class="footer__item"><a href="{% url 'payments' %}" class="footer__link link">Способы оплаты</a></li>
-            <li class="footer__item"><a href="{% url 'about-author' %}" class="footer__link link">О компании</a></li>
-            <li class="footer__item"><a href="{% url 'contacts' %}" class="footer__link link">Контакты</a></li>
+            <li><a href="{% url 'delivery' %}">Доставка</a></li>
+            <li><a href="{% url 'payments' %}">Способы оплаты</a></li>
+            <li><a href="{% url 'about-author' %}">О компании</a></li>
+            <li><a href="{% url 'contacts' %}">Контакты</a></li>
         </ul>
     </div>
 </footer>
