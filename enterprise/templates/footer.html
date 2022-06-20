@@ -3,26 +3,29 @@
     <link rel="stylesheet" href="{% static 'blocks/footer/footer.css' %}">
 {% endblock %}
 
+<footer class="footer-distributed">
 
-<footer>
-    <div class="heads">
+    <div class="footer-left">
+
+      <h3>ECOFOOD<span>logo</span></h3>
+
+      <p class="footer-links">
         <a href="{% url 'index' %}">© 2022 "ЭКОФУД СПБ"</a>
-        <ul>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            <li>
-                <a href="https://t.me/Olenchuk">
-                    <i class="fa fa-telegram" style="font-size:32px;color:rgb(0, 0, 0)"></i>
-                </a>
-            </li>
-                        <li>
-                <a href="https://vk.com/ashmanx">
-                    <i class="fa fa-vk" style="font-size:32px;color:rgb(0, 0, 0)"></i>
-                </a>
-            </li>
-            <li><a href="{% url 'delivery' %}">Доставка</a></li>
-            <li><a href="{% url 'payments' %}">Способы оплаты</a></li>
-            <li><a href="{% url 'about-author' %}">О компании</a></li>
-            <li><a href="{% url 'contacts' %}">Контакты</a></li>
-        </ul>
+        <a href="{% url 'delivery' %}">Доставка</a>
+        <a href="{% url 'payments' %}">Способы оплаты</a>
+        <a href="{% url 'about-author' %}">О компании</a>
+        <a href="{% url 'contacts' %}">Контакты</a>
+      </p>
+
+      <p class="footer-company-name">ECOFOOD© 2022</p>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <a href="https://t.me/Olenchuk">
+                <i class="fa fa-telegram" style="font-size:32px;color:rgb(0, 0, 0)"></i>
+        </a>
+        <a href="https://vk.com/ashmanx">
+                <i class="fa fa-vk" style="font-size:32px;color:rgb(0, 0, 0)"></i>
+        </a>
+      </p>
     </div>
+
 </footer>

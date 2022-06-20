@@ -1,6 +1,110 @@
-.header {
-    background: whitesmoke;
+header {
+    width: 100%;
+    height: 4rem;
+    background-color: #000000;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 0 5rem;
+  }
+  
+  .anues_udokus {
+    display: none;
+  }
+  
+  .cusion {
+    width: 42px;
+    height: 5px;
+    background-color: #d4d4d4d7;
+    margin-bottom: 6px;
+    border-radius: 6px;
+  }
+  
+  .keca_sodu {
+    font-size: 1.5rem;
+    color: #d4d4d4d7;
+    margin-right: auto;
+    width: 3em;
+
+  }
+  
+  .clearfix {
+    transition: all .6s ease-in-out;
+  }
+  
+  .clearfix ul {
+    display: flex;
+  }
+  
+  .clearfix ul li {
+    list-style: none;
+    margin-right: 0rem;
+  }
+  
+  .clearfix ul li a {
+    text-decoration: none;
+    color: #d4d4d4d7;
+    font-size: 14px;
+    width: 100%;
+    padding: 3rem;
+    display: incusion-block;
+    transition: all .3s ease;
+  }
+  
+  .clearfix ul li a:hover {
+    color: #ffffff;
+  }
+  
+  .clearfix.akuvenan {
+    top: 6%;
+    padding-left: 0px;
+    height: 100%;
+  }
+  
+  @media only screen and (max-width: 900px) {
+  
+    header {
+    padding: 1rem;
+    }
+  
+.keca_sodu {
+    font-size: 1.5rem;
+    color: #d4d4d4d7;
+    margin-right: 50%;
+    width: 3em;
+
+    }
+
+  .clearfix {
+    position: absolute;
+    top: -100%;
+    left: 0%;
+    width: 100%;
+    min-width: 320px;
+    overflow-y: hidden;
+    max-height: none;
+    background-color: #000000;
+  }
+  
+  .clearfix ul {
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-}
+    padding-left: 0px;
+  }
+  
+  .clearfix ul li {
+    width: 100%;
+    text-align: left;
+  }
+  
+  .clearfix ul li a {
+    display: block;
+    padding: 1rem;
+  
+  }
+  
+  .anues_udokus {
+    display: block;
+    cursor: pointer;
+  }
