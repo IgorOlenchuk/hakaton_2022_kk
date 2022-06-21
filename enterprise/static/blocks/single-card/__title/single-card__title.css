@@ -2,11 +2,7 @@
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: bold;
-/**
- * Адаптивный размер шрифта (минимальный 12 px, максимальный 30)
- */
-    font-size: calc( (100vw - 480px)/(1280 - 480) * (30 - 12) + 12px);
-    line-height: 49px;
+    font-size: 14;
     color: #000000;
     margin: 0;
 }

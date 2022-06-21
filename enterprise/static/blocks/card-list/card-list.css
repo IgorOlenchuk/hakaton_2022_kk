@@ -5,3 +5,13 @@
     grid-gap: 15px;
     margin-bottom: 52px;
 }
+
+@media only screen and (max-width: 1400px) {
+
+    .card-list {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+        grid-gap: 15px;
+        margin-bottom: 52px;
+    }

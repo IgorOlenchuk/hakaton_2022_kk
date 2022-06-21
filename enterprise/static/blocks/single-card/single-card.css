@@ -3,3 +3,8 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+@media only screen and (max-width: 600px) {
+    .single-card {
+        flex-direction: column;
+    }    
