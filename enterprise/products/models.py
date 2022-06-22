@@ -8,9 +8,12 @@ User = get_user_model()
 class Groups(models.Model):
     title = models.CharField(max_length=70,
                              verbose_name='Название группы товаров',
-                             help_text='Длина до 70 символов (в идеале на менее 40 и не более 70), заполнять обязательно')
+                             help_text='Длина до 70 символов (в идеале на '
+                                       'менее 40 и не более 70),'
+                                       'заполнять обязательно')
     image = models.ImageField(upload_to='group/',
-                              help_text='желательно 480х480, качество для web',
+                              help_text='желательно 480х480,'
+                                        'качество для web',
                               verbose_name='Изображение группы товаров')
 
     class Meta:
@@ -37,54 +40,92 @@ class ProductManager(models.Manager):
 
 class Products(models.Model):
     name = models.CharField(max_length=70,
-                            help_text='Длина до 70 символов (в идеале на менее 40 и не более 70), заполнять обязательно',
+                            help_text='Длина до 70 символов (в идеале на'
+                                      'менее 40 и не более 70),'
+                                      'заполнять обязательно',
                             verbose_name='Название товара')
     seo_title = models.TextField(max_length=70,
-                                   help_text='Длина до 70 символов (в идеале на менее 40 и не более 70), заполнять обязательно',
-                                   verbose_name='seo_title товара')
+                                 help_text='Длина до 70 символов '
+                                           '(в идеале на менее 40 и не'
+                                           'более 70), заполнять '
+                                           'обязательно',
+                                 verbose_name='seo_title товара')
     seo_description = models.TextField(max_length=160,
-                                   help_text='Длина до 160 символов (в идеале на менее 40 и не более 160), заполнять обязательно',
-                                   verbose_name='seo_description товара')
+                                       help_text='Длина до 160 символов '
+                                                 '(в идеале на менее 40 и не '
+                                                 'более 160), заполнять '
+                                                 'обязательно',
+                                       verbose_name='seo_description товара')
     mini_description = models.TextField(max_length=160,
-                                   help_text='Длина до 160 символов (в идеале на менее 40 и не более 160), заполнять обязательно',
-                                   verbose_name='Краткое описание товара')
+                                        help_text='Длина до 160 символов '
+                                                  '(в идеале на менее 40 и '
+                                                  'не более 160), заполнять '
+                                                  'обязательно',
+                                        verbose_name='Краткое описание '
+                                                     'товара')
     image = models.ImageField(upload_to='group/products/',
-                              help_text='Изображение товара для главной страницы',
+                              help_text='Изображение товара для главной '
+                                        'страницы',
                               verbose_name='Изображение товара 1',
                               blank=True,
                               null=True)
     alt_image = models.TextField(max_length=160,
-                                 help_text='Длина до 160 символов (в идеале на менее 40 и не более 160), заполнять обязательно',
+                                 help_text='Длина до 160 символов '
+                                           '(в идеале на менее 40 и не '
+                                           'более 160), заполнять '
+                                           'обязательно',
                                  verbose_name='Описание изображения для SEO')
     description = models.TextField(max_length=160,
-                                   help_text='Длина до 160 символов (в идеале на менее 40 и не более 160), заполнять обязательно',
+                                   help_text='Длина до 160 символов (в идеале'
+                                             'на менее 40 и не более 160), '
+                                             'заполнять обязательно',
                                    verbose_name='Основное описание товара')
-    description_first = models.TextField(help_text='Полное описание товара - часть 1',
-                                         verbose_name='Полное описание товара - часть 1',
+    description_first = models.TextField(help_text='Полное описание товара -'
+                                                   'часть 1',
+                                         verbose_name='Полное описание'
+                                                      'товара - '
+                                                      'часть 1',
                                          blank=True,
                                          null=True)
-    description_second = models.TextField(help_text='Полное описание товара - часть 2',
-                                          verbose_name='Полное описание товара - часть 2',
+    description_second = models.TextField(help_text='Полное описание товара -'
+                                                    'часть 2',
+                                          verbose_name='Полное описание товара'
+                                                       '- часть 2',
                                           blank=True,
                                           null=True)
     image_description_first = models.ImageField(upload_to='group/products/',
-                                                help_text='Изображение товара для части описания 1',
-                                                verbose_name='Изображение товара 2',
+                                                help_text='Изображение товара'
+                                                          'для части описания'
+                                                          '1',
+                                                verbose_name='Изображение '
+                                                             'товара 2',
                                                 blank=True,
                                                 null=True)
     alt_image_description_first = models.TextField(max_length=160,
-                                                   help_text='Длина до 160 символов (в идеале на менее 40 и не более 160), заполнять обязательно',
-                                                   verbose_name='Описание изображения для SEO',
+                                                   help_text='Длина до 160 '
+                                                   'символов (в идеале на '
+                                                   'менее 40 и не более 160),'
+                                                   'заполнять обязательно',
+                                                   verbose_name='Описание '
+                                                   'изображения для SEO',
                                                    blank=True,
                                                    null=True)
     image_description_second = models.ImageField(upload_to='group/products/',
-                                                 help_text='Изображение товара для части описания 2',
-                                                 verbose_name='Изображение товара 3',
+                                                 help_text='Изображение '
+                                                 'товара для части описания'
+                                                 '2',
+                                                 verbose_name='Изображение '
+                                                 'товара 3',
                                                  blank=True,
                                                  null=True)
     alt_image_description_second = models.TextField(max_length=160,
-                                                    help_text='Длина до 160 символов (в идеале на менее 40 и не более 160), заполнять обязательно',
-                                                    verbose_name='Описание изображения для SEO',
+                                                    help_text='Длина до 160 '
+                                                    'символов (в идеале на '
+                                                    'менее 40 и не более '
+                                                    '160), заполнять '
+                                                    'обязательно',
+                                                    verbose_name='Описание'
+                                                    'изображения для SEO',
                                                     blank=True,
                                                     null=True)
     characteristic = models.TextField(help_text='Характеристики',
@@ -92,13 +133,20 @@ class Products(models.Model):
                                       blank=True,
                                       null=True)
     image_characteristic = models.ImageField(upload_to='group/products/',
-                                                 help_text='Изображение товара для Характеристики',
-                                                 verbose_name='Изображение товара 3',
-                                                 blank=True,
-                                                 null=True)
+                                             help_text='Изображение '
+                                                       'товара для '
+                                                       'Характеристики',
+                                             verbose_name='Изображение '
+                                                          'товара 3',
+                                             blank=True,
+                                             null=True)
     alt_image_characteristic = models.TextField(max_length=160,
-                                                help_text='Длина до 160 символов (в идеале на менее 40 и не более 160), заполнять обязательно',
-                                                verbose_name='Описание изображения для SEO',
+                                                help_text='Длина до 160 '
+                                                'символов (в идеале на '
+                                                'менее 40 и не более '
+                                                '160), заполнять обязательно',
+                                                verbose_name='Описание '
+                                                'изображения для SEO',
                                                 blank=True,
                                                 null=True)
     group = models.ForeignKey(Groups,
