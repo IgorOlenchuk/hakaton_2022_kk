@@ -24,11 +24,17 @@ urlpatterns += [
          {"url": "/about-author/"}, name="about-author"),
     path("about/contacts/", views.flatpage,
          {"url": "/contacts/"}, name="contacts"),
-    path("about/payments/", views.flatpage,
-         {"url": "/payments/"}, name="payments"),
+    path("about/project/", views.flatpage,
+         {"url": "/project/"}, name="project"),
     path("about/delivery/", views.flatpage,
          {"url": "/delivery/"}, name="delivery"),
 ]
+
+
+urlpatterns += static(settings.MEDIA_URL,
+                         document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL,
+                         document_root=settings.STATICFILES_DIRS)
 
 if settings.DEBUG:
     import debug_toolbar

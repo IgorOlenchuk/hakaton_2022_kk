@@ -11,21 +11,21 @@
       </div>
    <div class="keca_sodu">
       <a href="{% url 'about-author' %}">
-         <img src="/static/images/logo.png" alt="ECOFOOD Technik" width=100%>
+         <img src="/static/images/logo_3.png" alt="Logo" width=46%>
       </a>
    </div> 
+   <a>КВАНТОВАЯ КИБЕРНЕТИКА 1.0</a>
 
       <nav class="clearfix">
          <ul>
-            <li><a href="{% url 'index' %}">Каталог</a></li>
-            <li><a href="{% url 'delivery' %}">Доставка</a></li>
-            <li><a href="{% url 'payments' %}">Способы оплаты</a></li>
-            <li><a href="{% url 'about-author' %}">О компании</a></li>
-            <li><a href="{% url 'contacts' %}">Контакты</a></li>
+            <li><a href="{% url 'index' %}">ГЛАВНАЯ</a></li>
+            <li><a href="{% url 'project' %}">О ПРОЕКТЕ</a></li>
+            <li><a href="{% url 'delivery' %}">ТЕХНОЛОГИИ</a></li>
+            <li><a href="{% url 'about-author' %}">О КОМАНДЕ</a></li>
                {% if request.user.is_authenticated %}
-               <li><a href="{% url 'logout' %}">Выход</a></li>
+               <li><a href="{% url 'logout' %}">ВЫХОД</a></li>
                   {% else %}
-               <li><a href="{% url 'login' %}">Войти</a></li>
+               <li><a href="{% url 'login' %}">ВОЙТИ</a></li>
             {% endif %}
          </ul>
       </nav>

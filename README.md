@@ -1,2 +1,2 @@
-# enterprise_062022
-site for Egor
+# Хакатон 2022 / Квантовая Кибернетика
+Модель находится в products/methods.py

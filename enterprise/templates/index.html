@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load thumbnail %}
 {% block description %}
     {% for description in seodata %}{{ description.description }} {% endfor %}
 {% endblock %}
@@ -12,25 +13,17 @@
 {% endblock %}
 
 {% block content %}
-    <div class="main__header">
-        <h1 class="main__title"> {% for h1 in seodata %}{{ h1.h1 }} {% endfor %} </h1>
-        <br>
-        <a class="main__text">Обеспечиваем технический суверенитет</a>
-        <br>
-        <h2 class="main__text"> {% for mini_description in seodata %}{{ mini_description.mini_description }} {% endfor %} </h2>
-        <br>
-    <a class="main__text">
-         {% for text in seodata %}{{ text.text }} {% endfor %}
-    </a>
-        <br>
-    <a>
-        <h2 class="main__text">Каталог товаров:</h2>
-    </a>
-    </div>
-    <div class="card-list">
-        {% for card in page %}
-            {% include 'product_card.html' with card=card %}
+<h1>Модель для прогнозирования макроэкономических показателей</h1>
+<h2>Краткое описание кейса<br> Создание модели для прогнозирования макроэкономических показателей</h2>
+<div class="card">
+    <a class="card__text">Начало построение модели</a>
+    <a class="card__text">Построение гистограммы Train</a>
+    <div class="card__body">
+        {% for i in path %}
+        <img src="static/images/plt/{{i}}.png" alt="plot" width=100%>
         {% endfor %}
-    </div>
-    {% include 'paginator.html' with page=page paginator=paginator %}
+ 
+
+</div>
+
 {% endblock %}

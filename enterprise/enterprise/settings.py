@@ -13,9 +13,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = '7y16j%db!@nbwg8u&s%nvn#p(&4ymdvedc3y+zekz!7&uqbfrb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'olenchjg.beget.tech']
+ALLOWED_HOSTS = ['127.0.0.1', '45.90.35.83', 'olenchuk.ru', 'www.olenchuk.ru']
 
 
 # Application definition
@@ -23,7 +23,6 @@ ALLOWED_HOSTS = ['127.0.0.1', 'olenchjg.beget.tech']
 INSTALLED_APPS = [
     'users',
     'products',
-    'post',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -130,13 +129,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
+STATIC_ROOT = "/var/www/olenchuk.ru/static/"
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATICFILES_DIRS = [os.path.join(BASE_DIR / "static")]
 
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = 'media/'
+MEDIA_ROOT = "/var/www/olenchuk.ru/media/"
 
 
 # Login/out

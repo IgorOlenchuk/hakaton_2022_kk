@@ -1,6 +1,6 @@
 .footer-distributed{
-  background: #e4e4e4d7;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  background: linear-gradient(rgb(255, 255, 255), #044694);;
+  box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.12);
   box-sizing: border-box;
   width: 100%;
   text-align: center;
